@@ -6,13 +6,14 @@ $hello = 'some content';
 function amarFunction () {
   // global $hello;
   // echo $hello;
-  echo $GLOBALS('hello');
+  echo $GLOBALS['hello'];
 }
 
 //echo $hello;
 amarFunction();
 
 class Nizam {
+  const NAME = 'Kayes';
   public $hello = 'some content';
   public function __construct($hi)
   {
@@ -25,6 +26,7 @@ class Nizam {
 }
 // $obj = new Nizam('some hello content');
 // echo $obj->amarFunction();
+echo Nizam::NAME;
 
 
 
