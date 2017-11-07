@@ -1,24 +1,6 @@
 <?php
-class Db
-{
-  private $dsn = 'mysql:host=localhost;dbname=auth';
-  private $user = 'root';
-  private $password = '';
-  private $options = [];
-  public function connection ()
-  {
-    try {
-      $connection = new PDO($this->dsn, $this->user, $this->password, $this->options);
-      return $connection;
-    } catch (Exception $e) {
-      die ('connection failed');
-    }
-
+class Db {
+  public function __construct ($dbconfig)  {
+    return new PDO($dbconfig['dsn'], $dbconfig['username'], $dbconfig['password'], $dbconfig['options']);
   }
 }
-
-$db = new Db();
-$connection = $db->connection();
-var_dump($connection);
-
-
