@@ -1,5 +1,5 @@
 <?php
 require 'core/Db.php';
 require 'config.php';
-$connection = new Db($dbconfig);
+$connection = Db::connection($dbconfig);
 require 'controllers/indexController.php';
